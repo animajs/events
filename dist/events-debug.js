@@ -1,4 +1,4 @@
-define("anima/events/1.1.0/events-debug", [], function() {
+define("anima/events/1.0.0/events-debug", [], function() {
     // Events
     // -----------------
     // Thanks to:
