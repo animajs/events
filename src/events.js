@@ -63,7 +63,7 @@ define(function() {
       return this
     }
 
-    events = events ? events.split(eventSplitter) : keys(cache)
+    events = events ? events.split(eventSplitter) : Object.keys(cache)
 
     // Loop through the callback list, splicing where appropriate.
     while (event = events.shift()) {
@@ -129,30 +129,13 @@ define(function() {
     receiver = isFunction(receiver) ? receiver.prototype : receiver
     var proto = Events.prototype
 
-    for (var p in proto) {
-      if (proto.hasOwnProperty(p)) {
-        receiver[p] = proto[p]
+    var event = new Events
+    Object.keys(proto).forEach(function(key) {
+      receiver[key] = function() {
+        proto[key].apply(event, Array.prototype.slice.call(arguments))
+        return this
       }
-    }
-  }
-
-
-  // Helpers
-  // -------
-
-  var keys = Object.keys
-
-  if (!keys) {
-    keys = function(o) {
-      var result = []
-
-      for (var name in o) {
-        if (o.hasOwnProperty(name)) {
-          result.push(name)
-        }
-      }
-      return result
-    }
+    })
   }
 
   // Execute callbacks
