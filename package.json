@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "提供基本的事件添加、移除和触发功能。",
     "keywords": ["infrastructure"],
-    "homepage": "http://aralejs.org/events/",
+    "homepage": "http://animajs.org/events/",
     "author": "玉伯 <lifesinger@gmail.com>",
     "maintainers": [
         "玉伯 <lifesinger@gmail.com>",
@@ -11,10 +11,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/aralejs/events.git"
+        "url": "https://github.com/animajs/events.git"
     },
     "bugs": {
-        "url": "https://github.com/aralejs/events/issues"
+        "url": "https://github.com/animajs/events/issues"
     },
     "spm": {
         "main": "index.js"
